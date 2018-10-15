@@ -1,17 +1,18 @@
 <template>
   <div id="app">
     <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <h1>Fireworks</h1>
+    <Firework :boxHeight="'100%'" :boxWidth="'100%'"/>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import Firework from './components/fireworks.vue'
 
 export default {
   name: 'app',
   components: {
-    HelloWorld
+    Firework
   }
 }
 </script>
