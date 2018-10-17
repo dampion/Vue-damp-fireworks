@@ -24,3 +24,7 @@ yarn run test
 ```
 yarn run lint
 ```
+
+### Demo Page
+[Demo Page](https://dampion.github.io/vueFireworks/)
+I'll update this and upload as a npm components later(scheduled in the end of October)
