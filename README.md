@@ -1,4 +1,4 @@
-# vue-firework
+# vue-damp-firework
 
 ## Project setup
 ```
@@ -15,16 +15,10 @@ yarn run serve
 yarn run build
 ```
 
-### Run your tests
-```
-yarn run test
-```
-
 ### Lints and fixes files
 ```
 yarn run lint
 ```
 
 ### Demo Page
-[Demo Page](https://dampion.github.io/vueFireworks/)
-I'll update this and upload as a npm components later(scheduled in the end of October)
+[Click me to watch the fireworks](https://dampion.github.io/Vue-damp-fireworks/)
