@@ -1,6 +1,6 @@
 # vue-damp-firework
 The interesting component for Vue developers.
-<p align="center"><<img src="./public/fireworks.gif" alt="Vue dampion fireworks"></p>
+<p align="center"><img src="./public/fireworks.gif" alt="Vue dampion fireworks"></p>
 
 ## Contribution Guide
 
