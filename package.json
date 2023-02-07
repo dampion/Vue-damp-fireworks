@@ -1,19 +1,32 @@
 {
-  "name": "vue-firework",
-  "version": "0.1.0",
-  "private": true,
+  "name": "vue-damp-fireworks",
+  "version": "1.0.0",
+  "main": "dist/vue-damp-fireworks.common.js",
+  "description": "A Vue based fireworks component",
+  "author": "dampion <evanchen79@gmail.com>",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dampion/Vue-fireworks.git"
+  },
+  "files": [
+    "dist/*",
+    "src/*",
+    "public/*"
+  ],
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
+    "build:npm": "vue-cli-service build --target lib ./src/components/index.js",
+    "build:doc": "vue-cli-service build ./src/main.js --dest docs --mode development",
     "lint": "vue-cli-service lint"
   },
   "dependencies": {
     "vue": "^2.5.17"
   },
   "devDependencies": {
-    "@vue/cli-plugin-babel": "^3.0.5",
-    "@vue/cli-plugin-eslint": "^3.0.5",
-    "@vue/cli-service": "^3.0.5",
+    "@vue/cli-plugin-babel": "^3.3.5",
+    "@vue/cli-plugin-eslint": "^3.3.5",
+    "@vue/cli-service": "^3.3.5",
     "vue-template-compiler": "^2.5.17"
   },
   "eslintConfig": {

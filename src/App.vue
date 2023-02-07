@@ -1,13 +1,12 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
     <h1>Fireworks</h1>
     <Firework :boxHeight="'100%'" :boxWidth="'100%'"/>
   </div>
 </template>
 
 <script>
-import Firework from './components/fireworks.vue'
+import Firework from './components/Fireworks'
 
 export default {
   name: 'app',
