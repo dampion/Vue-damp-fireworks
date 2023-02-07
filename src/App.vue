@@ -1,7 +1,9 @@
 <template>
   <div id="app">
     <h1>Fireworks</h1>
-    <Firework :boxHeight="'100%'" :boxWidth="'100%'"/>
+    <Firework>
+      <p>It's interesting, isn't it?</p>
+    </Firework>
   </div>
 </template>
 
@@ -24,5 +26,9 @@ export default {
   text-align: center;
   color: #2c3e50;
   margin-top: 60px;
+}
+body{
+  padding: 0;
+  margin: 0;
 }
 </style>
