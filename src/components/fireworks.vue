@@ -1,6 +1,11 @@
 <style scoped>
+.vue-damp-fireworks-wrap{
+  position: relative;
+  margin: 0 auto;
+}
 .canvasBox {
   width: 100%;
+  height: 100%;
   position: absolute;
   top: 0;
   left: 0;
@@ -14,21 +19,33 @@
 
 <template>
   <div
-    class="canvasBox"
+    class="vue-damp-fireworks-wrap"
     :style="`
       height: ${canvasBoxHeight};
-      width: ${canvasBoxWidth};`">
-    <canvas id="canvas"></canvas>
+      width: ${canvasBoxWidth};
+    `"
+  >
+    <div class="canvasBox">
+      <canvas id="canvas"></canvas>
+    </div>
+    <slot></slot>
   </div>
 </template>
 
 <script>
   export default {
-    props: ['boxHeight', 'boxWidth'],
+    props: {
+      boxHeight: {
+        type: Number,
+        default: window.innerHeight - 104
+      },
+      boxWidth: {
+        type: Number,
+        default: window.innerWidth
+      },
+    },
     data() {
       return {
-        width: window.innerWidth,
-        height: 490,
         seedAmount: 0,
         seeds: [],
         particles: [],
@@ -47,17 +64,27 @@
         return null;
       },
       canvasBoxHeight() {
-        return this.boxHeight || '100%';
+        if (this.boxHeight){
+          if (typeof this.boxHeight === 'number' || typeof this.boxHeight === 'string'){
+            return `${this.boxHeight}px`
+          }
+          return ''
+        }
       },
       canvasBoxWidth() {
-        return this.boxWidth || '100%';
+        if (this.boxWidth){
+          if (typeof this.boxWidth === 'number' || typeof this.boxWidth === 'string'){
+            return `${this.boxWidth}px`
+          }
+          return ''
+        }
       },
     },
     methods: {
       clearCanvas() {
         if (this.ctx !== undefined) {
           this.ctx.fillStyle = 'rgba(0, 0, 0, 0.1)';
-          this.ctx.fillRect(0, 0, this.width, this.height);
+          this.ctx.fillRect(0, 0, this.boxWidth, this.boxHeight);
         }
       },
       circle(x, y, radius) {
@@ -93,8 +120,8 @@
           if (this.auto && (this.seedAmount % 40) === 0) {
             const seed =
               this.Seed(
-                this.randomInt(20, this.width - 20),
-                this.height - 20,
+                this.randomInt(20, this.boxWidth - 20),
+                this.boxHeight - 20,
                 this.randomInt(175, 185),
                 [this.randomInt(0, 359), '100%', '50%'],
               );
@@ -190,8 +217,8 @@
         return Math.floor((Math.random() * ((max - min) + 1)) + min);
       },
       init() {
-        this.canvas.width = this.width;
-        this.canvas.height = this.height;
+        this.canvas.width = this.boxWidth;
+        this.canvas.height = this.boxHeight;
       },
     },
     mounted() {
@@ -203,9 +230,9 @@
         self.seeds.push(seed);
       });
       window.addEventListener('resize', () => {
-        self.width = window.innerWidth;
-        self.height = window.innerHeight;
-        self.canvas.width = self.width;
+        self.boxWidth = window.innerWidth;
+        // self.boxHeight = window.innerHeight;
+        self.canvas.width = self.boxWidth;
         self.clearCanvas();
       });
     },
