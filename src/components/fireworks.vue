@@ -43,13 +43,17 @@
         type: Number,
         default: window.innerWidth
       },
+      duration: {
+        type: Number,
+        default: 0
+      }
     },
     data() {
       return {
         seedAmount: 0,
         seeds: [],
         particles: [],
-        auto: true,
+        auto: true
       }
     },
     computed: {
@@ -225,6 +229,11 @@
       const self = this;
       self.init();
       self.loop();
+      if(this.duration){
+        setTimeout(()=>{
+          this.auto=false
+        },this.duration)
+      }
       window.addEventListener('click', (event) => {
         const seed = self.Seed(event.pageX, event.pageY, self.randomInt(175, 185), [self.randomInt(0, 359), '100%', '50%']);
         self.seeds.push(seed);

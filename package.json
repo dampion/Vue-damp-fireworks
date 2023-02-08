@@ -1,6 +1,6 @@
 {
   "name": "vue-damp-fireworks",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "main": "dist/vue-damp-fireworks.common.js",
   "description": "A Vue based fireworks component",
   "author": "dampion <evanchen79@gmail.com>",

@@ -25,6 +25,17 @@ Vue.use(VueFireworks)
 </vue-damp-fireworks>
 ```
 
+### Component Props
+
+All parameters are optional and fireworks determines the default value of each prop.
+
+| Prop Name       | vue-damp-fireworks Doc & Description                                                     | Type                   | default |
+| :-------------- | :--------------------------------------------------------------------------------------- | :--------------------- | :------ |
+| boxHeight       | decides the height of the component                                                      | `Number`               | 500     |
+| boxWidth        | decides the width of the component                                                       | `Number`               | 500     |
+| duration        | decides the duration(ms) of the animation                                                | `Number`               |         |
+
+
 ## Demo Page
 [Click me to watch the fireworks](https://dampion.github.io/Vue-damp-fireworks/)
 
