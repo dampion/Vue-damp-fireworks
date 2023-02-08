@@ -13,6 +13,13 @@
     "src/*",
     "public/*"
   ],
+  "keywords": [
+    "firework",
+    "煙火",
+    "烟花",
+    "烟火",
+    "爆竹"
+  ],
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
